@@ -1,11 +1,9 @@
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/deFr0ggy/HASHER/main/hasher.png" />
+</p>
+ 
 # HASHER v1.0
-```
- __  __     ______     ______     __  __     ______     ______    
-/\ \_\ \   /\  __ \   /\  ___\   /\ \_\ \   /\  ___\   /\  == \   
-\ \  __ \  \ \  __ \  \ \___  \  \ \  __ \  \ \  __\   \ \  __<   
- \ \_\ \_\  \ \_\ \_\  \/\_____\  \ \_\ \_\  \ \_____\  \ \_\ \_\ 
-  \/_/\/_/   \/_/\/_/   \/_____/   \/_/\/_/   \/_____/   \/_/ /_/ v1.0
-```
 
 A simple python script to automate the HASH calculation of files. Currently it calculates the following hashes.
 
