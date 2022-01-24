@@ -1,4 +1,7 @@
 from ast import arg
+from fileinput import filename
+from genericpath import isdir
+from importlib.resources import path
 import sys
 import os
 import hashlib
@@ -65,10 +68,14 @@ def main():
         if os.path.isfile(sys.argv[1]):
             print(Fore.WHITE + "File Name: ", sys.argv[1] + "\n" + Fore.RESET)
             hashMe(sys.argv[1])
-        if os.path.isdir(sys.argv[1]):
-            for file in os.listdir(sys.argv[1]):
-                print(Fore.WHITE + "File Name: ", file + "\n" + Fore.RESET)
-                hashMe(file)
 
+        if os.path.isdir(sys.argv[1]):
+
+            for root, dirs, filenames in os.walk(sys.argv[1]):
+                for filename in filenames:
+                    recurFile = os.path.join(root, filename)
+                    print(Fore.WHITE + "File Name: ", recurFile + "\n" + Fore.RESET)
+                    hashMe(recurFile)
+               
 if __name__ == '__main__':
     main()
