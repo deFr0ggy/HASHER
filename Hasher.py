@@ -1,5 +1,8 @@
+from ast import arg
 import sys
+import os
 import hashlib
+import argparse
 from colorama import *
 
 def banner():
@@ -59,8 +62,13 @@ def main():
     if len(sys.argv) < 2 or len(sys.argv) > 2:
         print("Invalid Arguments Provided!")
     else:
-        hashMe(sys.argv[1])
+        if os.path.isfile(sys.argv[1]):
+            print(Fore.WHITE + "File Name: ", sys.argv[1] + "\n" + Fore.RESET)
+            hashMe(sys.argv[1])
+        if os.path.isdir(sys.argv[1]):
+            for file in os.listdir(sys.argv[1]):
+                print(Fore.WHITE + "File Name: ", file + "\n" + Fore.RESET)
+                hashMe(file)
 
 if __name__ == '__main__':
     main()
-    
